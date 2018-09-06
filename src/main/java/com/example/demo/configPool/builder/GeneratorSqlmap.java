@@ -1,4 +1,4 @@
-package com.example.demo.configPool;
+package com.example.demo.configPool.builder;
 
 import com.example.demo.configPool.builder.util.FileUtil;
 import org.mybatis.generator.api.MyBatisGenerator;
