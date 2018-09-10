@@ -28,19 +28,6 @@ import java.io.IOException;
 @MapperScan(basePackages = "com.example.demo.dao" , sqlSessionFactoryRef = "db1sqlSessionFactory")
 public class Data1ConfigPool {
 
-   /* @Value("${driver-class-name}")
-    private String driver;
-
-    @Value("${username}")
-    private String userName;
-
-    @Value("${password}")
-    private String userPassword;
-
-    @Value("${url}")
-    private String dataUrl;*/
-
-    //加载xml文件
     private static final String MAPPER_LOCAL = "classpath*:com/example/demo/db1/mapper/*.xml";
 
     @Bean(name = "db1DataSource")

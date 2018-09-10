@@ -1,12 +1,16 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.dao.LeUserLoginLogMapper;
 import com.example.demo.dao.LeUserMapper;
 import com.example.demo.db1.bean.LeUser;
 import com.example.demo.db1.bean.LeUserExample;
+import com.example.demo.db1.bean.LeUserLoginLog;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,10 +24,17 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private LeUserMapper leUserMapper;
 
+    @Autowired
+    private LeUserLoginLogMapper leUserLoginLogMapper;
+
     @Override
+    @Transactional("db1TransactionManager")
     public List<LeUser> getUserList() {
-        LeUser c09b1c77f07e4359b9090bb1cc047ef5 = leUserMapper.selectByPrimaryKey("c09b1c77f07e4359b9090bb1cc047ef5");
-        System.out.println(c09b1c77f07e4359b9090bb1cc047ef5);
-        return null;
+        LeUser user = new LeUser();
+        user.setId("sdfsdfsdfsdafag");
+       leUserMapper.insert(user);
+        LeUserLoginLog leUserLoginLog = new LeUserLoginLog();
+       leUserLoginLogMapper.insert(leUserLoginLog);
+        return new ArrayList<>();
     }
 }
