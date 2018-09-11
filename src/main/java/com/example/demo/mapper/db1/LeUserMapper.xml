@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.dao.LeUserMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.db1.bean.LeUser">
+<mapper namespace="com.example.demo.dao.db1.LeUserMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.bean.db1.LeUser">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="login_name" jdbcType="VARCHAR" property="loginName" />
     <result column="cn_name" jdbcType="VARCHAR" property="cnName" />
@@ -92,7 +92,7 @@
       ${fields}
     </if>
   </sql>
-  <select id="selectByExample" parameterType="com.example.demo.db1.bean.LeUserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.demo.bean.db1.LeUserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -119,13 +119,13 @@
     delete from le_user
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.demo.db1.bean.LeUserExample">
+  <delete id="deleteByExample" parameterType="com.example.demo.bean.db1.LeUserExample">
     delete from le_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.demo.db1.bean.LeUser">
+  <insert id="insert" parameterType="com.example.demo.bean.db1.LeUser">
     insert into le_user (id, login_name, cn_name, 
       en_name, tel, identity_id, 
       identity_encrypt, password, sex, 
@@ -143,7 +143,7 @@
       #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.db1.bean.LeUser">
+  <insert id="insertSelective" parameterType="com.example.demo.bean.db1.LeUser">
     insert into le_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -276,7 +276,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.demo.db1.bean.LeUserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.demo.bean.db1.LeUserExample" resultType="java.lang.Long">
     select count(*) from le_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -380,7 +380,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.db1.bean.LeUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.db1.LeUser">
     update le_user
     <set>
       <if test="loginName != null">
@@ -446,7 +446,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.db1.bean.LeUser">
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.db1.LeUser">
     update le_user
     set login_name = #{loginName,jdbcType=VARCHAR},
       cn_name = #{cnName,jdbcType=VARCHAR},

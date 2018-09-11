@@ -1,7 +1,7 @@
-package com.example.demo.dao;
+package com.example.demo.dao.db1;
 
-import com.example.demo.db1.bean.LeUser;
-import com.example.demo.db1.bean.LeUserExample;
+import com.example.demo.bean.db1.LeUser;
+import com.example.demo.bean.db1.LeUserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

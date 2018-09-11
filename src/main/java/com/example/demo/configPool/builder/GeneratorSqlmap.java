@@ -26,7 +26,7 @@ public class GeneratorSqlmap {
 		FileUtil fileUtil = new FileUtil();
 		String config = "";
 
-		config = fileUtil.getResourceFilePathByName("generatorConfig.xml");
+		config = fileUtil.getResourceFilePathByName("generatorConfig2.xml");
 
 		try {
 			GeneratorSqlmap generatorSqlmap = new GeneratorSqlmap();

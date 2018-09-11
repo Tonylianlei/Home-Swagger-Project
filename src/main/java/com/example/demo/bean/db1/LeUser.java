@@ -1,4 +1,4 @@
-package com.example.demo.db1.bean;
+package com.example.demo.bean.db1;
 
 import java.util.Date;
 import lombok.Data;
