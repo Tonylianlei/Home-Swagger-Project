@@ -1,8 +1,10 @@
 package com.example.demo.configPool.builder;
 
 import com.example.demo.configPool.builder.util.FileUtil;
+import com.example.demo.configPool.builder.util.XMLAnalysis;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
+import org.mybatis.generator.config.Context;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
@@ -17,7 +19,7 @@ public class GeneratorSqlmap {
 		File configFile = new File(path); 
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = cp.parseConfiguration(configFile);
-		DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+        DefaultShellCallback callback = new DefaultShellCallback(overwrite);
 		MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config,callback, warnings);
 		myBatisGenerator.generate(null);
 
@@ -26,7 +28,8 @@ public class GeneratorSqlmap {
 		FileUtil fileUtil = new FileUtil();
 		String config = "";
 
-		config = fileUtil.getResourceFilePathByName("generatorConfig2.xml");
+		config = fileUtil.getResourceFilePathByName("generatorConfig.xml");
+        XMLAnalysis.getNodeInfo(config);
 
 		try {
 			GeneratorSqlmap generatorSqlmap = new GeneratorSqlmap();

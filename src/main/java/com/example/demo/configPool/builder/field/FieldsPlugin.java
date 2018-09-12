@@ -65,22 +65,14 @@ public class FieldsPlugin extends PluginAdapter {
 	@Override
 	public boolean sqlMapSelectByPrimaryKeyElementGenerated(XmlElement element,
 			IntrospectedTable introspectedTable) {
-		
 		List<Element> elements = element.getElements();
-		
 		StringBuilder columns = new StringBuilder();
-		
 		List<IntrospectedColumn> allColumns = introspectedTable.getAllColumns();
-		
-		
 		for (IntrospectedColumn introspectedColumn : allColumns) {
-			
 			columns.append(",").append(introspectedColumn.getActualColumnName());
 		}
 		columns.deleteCharAt(0);
 		elements.set(1, new TextElement(columns.toString()));
-		
-		
 		return super.sqlMapSelectByPrimaryKeyElementGenerated(element,
 				introspectedTable);
 	}

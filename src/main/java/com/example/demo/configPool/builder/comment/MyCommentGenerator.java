@@ -8,9 +8,6 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
 
 import java.util.Properties;
 
-/**
- * @author 史东晗
- */
 public class MyCommentGenerator implements CommentGenerator {
 
 
