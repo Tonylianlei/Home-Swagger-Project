@@ -30,10 +30,11 @@ public class SwaggerBase {
      **/
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder().title("项目嵌入Swagger功能")
-                .contact(new Contact("连磊" , "" , "18210470058@163.com"))
+                .contact(new Contact("连磊" , "http://localhost:8080" , "18210470058@163.com"))
                 .version("1.0")
                 .description("功能整理")
-                .build();
+                .build()
+                ;
     }
 
     @Bean
