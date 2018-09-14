@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 描述：
  */
 @RestController
-@Api(description = "用户信息"  , tags = "用户信息")
+@Api(description = "用户信息" )
 public class UserController {
 
     @Autowired

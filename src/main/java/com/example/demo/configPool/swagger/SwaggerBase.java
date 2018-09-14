@@ -40,12 +40,12 @@ public class SwaggerBase {
     @Bean
     public Docket createRestApi(){
         return new Docket(DocumentationType.SWAGGER_2)
+                //.groupName("User：用户信息")
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
                 .paths(PathSelectors.any())
                 .build()
-                //.groupName("User：用户信息")
                 ;
     }
 

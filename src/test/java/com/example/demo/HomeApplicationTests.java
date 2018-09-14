@@ -32,7 +32,7 @@ public class HomeApplicationTests {
 	@Test
 	public void Test() throws Exception {
 		// 得到swagger.json,写入outputDir目录中
-		mockMvc.perform(get("/v2/api-docs?group=SysMgt_API").accept(MediaType.APPLICATION_JSON))
+		mockMvc.perform(get("/v2/api-docs").accept(MediaType.APPLICATION_JSON))
 				.andDo(SwaggerResultHandler.outputDirectory(outputDir).build())
                 .andExpect(status().isOk())
                 .andReturn();
