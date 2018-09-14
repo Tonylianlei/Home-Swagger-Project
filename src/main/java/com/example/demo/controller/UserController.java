@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.bean.db2.TblUser;
 import com.example.demo.service.UserService;
+import com.example.demo.utils.resultutil.ResultUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,9 @@ public class UserController {
 
     @RequestMapping(value = "/setUser" , method = RequestMethod.POST)
     @ApiOperation(value = "获取学生")
-    public void getUser(@RequestBody TblUser tblUser){
+    public ResultUtils getUser(@RequestBody TblUser tblUser){
         userService.getUserdb2();
+        return ResultUtils.setResult();
     }
 
 }
