@@ -45,7 +45,7 @@ public class SwaggerBase {
                 .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
                 .paths(PathSelectors.any())
                 .build()
-                .groupName("User：用户信息")
+                //.groupName("User：用户信息")
                 ;
     }
 

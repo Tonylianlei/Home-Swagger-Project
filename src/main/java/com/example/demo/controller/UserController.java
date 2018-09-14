@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
  * 描述：
  */
 @RestController
-@Api(description = "用户信息")
+@Api(description = "用户信息"  , tags = "用户信息")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/getUser" , method = RequestMethod.POST)
+    @RequestMapping(value = "/setUser" , method = RequestMethod.POST)
     @ApiOperation(value = "获取学生")
     public void getUser(@RequestBody TblUser tblUser){
         userService.getUserdb2();

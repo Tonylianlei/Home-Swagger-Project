@@ -5,10 +5,10 @@ import lombok.Data;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiModel;
 /**
- * 
+ * 用户
  */
 @Data
-@ApiModel(description = "")
+@ApiModel(description = "用户")
 public class TblUser {
     private Long id;
 
