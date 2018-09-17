@@ -1,7 +1,9 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.bean.db1.LeUser;
 import com.example.demo.bean.db2.TblUser;
 import com.example.demo.bean.db2.TblUserExample;
+import com.example.demo.dao.db1.LeUserMapper;
 import com.example.demo.dao.db2.TblUserMapper;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +21,18 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private TblUserMapper tblUserMapper;
+    private LeUserMapper leUserMapper;
 
+    /**
+     *开 发 者：连磊
+     *开发时间：2018/9/17 14:47
+     *方 法 名：getUserYById
+     *传入参数：[id]
+     *返 回 值：java.util.List<com.example.demo.bean.db1.LeUser>
+     *描    述：根据当前id，查询详情
+     **/
     @Override
-    @Transactional(value = "db2TransactionManager" , rollbackFor = Exception.class)
-    public void getUserdb2() {
-        TblUserExample tblUserExample = new TblUserExample();
-        tblUserExample.createCriteria();
-        List<TblUser> tblUsers = tblUserMapper.selectByExample(tblUserExample);
-        System.out.println(tblUsers);
+    public LeUser getUserYById(String id) {
+        return leUserMapper.selectByPrimaryKey(id);
     }
 }

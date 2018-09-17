@@ -1,0 +1,26 @@
+server:
+  port: 8088
+#配置第一个数据源
+first:
+  datasource:
+    url: jdbc:mysql://localhost:3306/matchmaking?characterEncoding=utf8&useSSL=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    max-wait: 10000
+    max-active: 200
+    test-on-borrow: true
+    initial-size: 10
+#配置第二个数据源
+second:
+  datasource:
+    url: jdbc:mysql://localhost:3306/resources?characterEncoding=utf8&useSSL=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    max-wait: 10000
+    max-active: 200
+    test-on-borrow: true
+    initial-size: 10
+logging:
+  config: classpath:logging-config.xml
