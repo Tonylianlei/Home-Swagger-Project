@@ -28,7 +28,7 @@ public class ResultUtils<T> {
 
     private static ResultUtils resultUtils = null;
 
-    public static ResultUtils setResult(){
+    public static ResultUtils createResult(){
         if (resultUtils == null){
             synchronized (ResultUtils.class){
                 if (null == resultUtils){
@@ -46,12 +46,12 @@ public class ResultUtils<T> {
         if (StringUtils.isEmpty(code)){
             code = this.code;
         }
-        setResult().setMes(message).setCodeValue(code).setObjValue(obj);
+        createResult().setMes(message).setCodeValue(code).setObjValue(obj);
         return resultUtils;
     }
 
     public ResultUtils setResultMessage(String message, String code){
-        setResult().setMes(message).setCodeValue(code);
+        createResult().setMes(message).setCodeValue(code);
         return resultUtils;
     }
 

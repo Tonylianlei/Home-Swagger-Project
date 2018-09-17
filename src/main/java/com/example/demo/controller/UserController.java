@@ -27,7 +27,7 @@ public class UserController {
     @ApiOperation(value = "获取学生")
     public ResultUtils getUser(@RequestBody TblUser tblUser){
         userService.getUserdb2();
-        return ResultUtils.setResult();
+        return ResultUtils.createResult();
     }
 
 }
