@@ -1,4 +1,4 @@
-package com.example.demo.configPool.builder.field;
+package com.example.demo.configpool.builder.field;
 
 import org.mybatis.generator.api.*;
 import org.mybatis.generator.api.dom.java.*;

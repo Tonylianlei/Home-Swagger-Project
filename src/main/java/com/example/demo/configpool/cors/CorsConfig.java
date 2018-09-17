@@ -1,4 +1,4 @@
-package com.example.demo.configPool.cors;
+package com.example.demo.configpool.cors;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

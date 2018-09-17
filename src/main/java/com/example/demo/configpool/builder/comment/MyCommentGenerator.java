@@ -1,4 +1,4 @@
-package com.example.demo.configPool.builder.comment;
+package com.example.demo.configpool.builder.comment;
 
 import org.mybatis.generator.api.CommentGenerator;
 import org.mybatis.generator.api.IntrospectedColumn;

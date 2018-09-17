@@ -1,4 +1,4 @@
-package com.example.demo.configPool.aop;
+package com.example.demo.configpool.aop;
 
 import com.example.demo.utils.exceptionutil.BusinessException;
 import com.example.demo.utils.resultutil.ResultCodeEnum;

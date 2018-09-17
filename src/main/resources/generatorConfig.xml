@@ -12,12 +12,12 @@
     <context id="DB2Tables" targetRuntime="MyBatis3">
 
 
-        <plugin type="com.example.demo.configPool.builder.field.FieldsPlugin" />
+        <plugin type="com.example.demo.configpool.builder.field.FieldsPlugin" />
 
-        <plugin type="com.example.demo.configPool.builder.page.PaginationPlugin"/>
+        <plugin type="com.example.demo.configpool.builder.page.PaginationPlugin"/>
 
         <!--去除注释  -->
-        <commentGenerator type="com.example.demo.configPool.builder.comment.MyCommentGenerator">
+        <commentGenerator type="com.example.demo.configpool.builder.comment.MyCommentGenerator">
             <property name="suppressAllComments" value="true" />
         </commentGenerator>
 

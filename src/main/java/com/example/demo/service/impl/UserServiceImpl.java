@@ -5,6 +5,7 @@ import com.example.demo.bean.db2.TblUser;
 import com.example.demo.bean.db2.TblUserExample;
 import com.example.demo.dao.db1.LeUserMapper;
 import com.example.demo.dao.db2.TblUserMapper;
+import com.example.demo.service.EmailService;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private LeUserMapper leUserMapper;
+    @Autowired
+    private EmailService emailService;
 
     /**
      *开 发 者：连磊
@@ -33,6 +36,7 @@ public class UserServiceImpl implements UserService {
      **/
     @Override
     public LeUser getUserYById(String id) {
+        emailService.sendEmail(null , null , null);
         return leUserMapper.selectByPrimaryKey(id);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.demo.configPool.swagger;
+package com.example.demo.configpool.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

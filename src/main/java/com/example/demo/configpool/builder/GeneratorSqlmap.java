@@ -1,10 +1,9 @@
-package com.example.demo.configPool.builder;
+package com.example.demo.configpool.builder;
 
-import com.example.demo.configPool.builder.util.FileUtil;
-import com.example.demo.configPool.builder.util.XMLAnalysis;
+import com.example.demo.configpool.builder.util.FileUtil;
+import com.example.demo.configpool.builder.util.XMLAnalysis;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
-import org.mybatis.generator.config.Context;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 

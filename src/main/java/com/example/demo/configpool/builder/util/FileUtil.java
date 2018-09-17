@@ -1,4 +1,4 @@
-package com.example.demo.configPool.builder.util;
+package com.example.demo.configpool.builder.util;
 
 import org.apache.commons.io.IOUtils;
 

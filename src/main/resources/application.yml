@@ -22,5 +22,21 @@ second:
     max-active: 200
     test-on-borrow: true
     initial-size: 10
+#配置加载日志配置文件
 logging:
   config: classpath:logging-config.xml
+#配置多个邮件数据源
+send-email:
+  mail:
+    mail-0:
+      default-encoding: UTF-8
+      host: smtp.qiye.163.com
+      protocol: smtp
+      username: cmc_error@chinaventure.com.cn
+      password: Cmc.error0611
+    mail-1:
+      default-encoding: UTF-8
+      host: smtp.qq.com
+      protocol: smtp
+      username: 3102365594@qq.com
+      password: lianlei110120
