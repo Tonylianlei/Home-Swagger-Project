@@ -1,7 +1,7 @@
 package com.example.demo.utils.resultutil;
 
-import com.sun.org.apache.regexp.internal.RE;
 import lombok.Data;
+import org.springframework.util.StringUtils;
 
 /**
  * 创建人:连磊
@@ -11,16 +11,22 @@ import lombok.Data;
 @Data
 public class ResultUtils<T> {
 
-    //返回信息
-    private String message = "";
+    /**
+     * 返回信息,并设置默认值
+     */
+    private String message = ResultEnum.ResultMessage.REQUEST_SUCCESS.getMessage();
 
-    //返回Code
-    private String code = "0";
+    /**
+     * 返回code，并设置默认值
+     */
+    private String code = ResultEnum.ResultMessage.REQUEST_SUCCESS.getCode();
 
-    //返回对象
+    /**
+     * 返回具体信息
+     */
     private T obj = null;
 
-    private static volatile ResultUtils resultUtils = null;
+    private static ResultUtils resultUtils = null;
 
     public static ResultUtils setResult(){
         if (resultUtils == null){
@@ -34,17 +40,18 @@ public class ResultUtils<T> {
     }
 
     public ResultUtils setResultMessage(String message, String code, T obj){
+        if (StringUtils.isEmpty(message)){
+            message = this.message;
+        }
+        if (StringUtils.isEmpty(code)){
+            code = this.code;
+        }
         setResult().setMes(message).setCodeValue(code).setObjValue(obj);
         return resultUtils;
     }
 
     public ResultUtils setResultMessage(String message, String code){
         setResult().setMes(message).setCodeValue(code);
-        return resultUtils;
-    }
-
-    public ResultUtils setResultMessage(String message , T obj){
-        setResult().setMes(message).setObjValue(obj);
         return resultUtils;
     }
 
