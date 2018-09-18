@@ -117,9 +117,4 @@ public class DateDistance {
         int month = (aft.get(Calendar.YEAR) - bef.get(Calendar.YEAR)) * 12;
         return  Math.abs(month + result) + "";
     }
-
-        public static void main(String[] args) throws Exception {
-        String distanceDays = getDistanceMoth("2016-09-16", "2017-09-18");
-        System.out.println(distanceDays);
-    }
-}  
+}
