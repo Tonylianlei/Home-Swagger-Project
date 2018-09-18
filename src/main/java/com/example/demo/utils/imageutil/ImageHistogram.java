@@ -115,10 +115,10 @@ public class ImageHistogram {
         return similarity;
     }
 
-    public static void main(String[] args) throws IOException {
+    /*public static void main(String[] args) throws IOException {
         ImageHistogram imageHistogram = new ImageHistogram();
         double match = imageHistogram.match("C:\\Users\\Tony\\Desktop\\341554555741054982.jpg", "C:\\Users\\Tony\\Desktop\\341554555741054982 - 副本.jpg");
         System.out.println(match);
-    }
+    }*/
 
 }
