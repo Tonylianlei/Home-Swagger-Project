@@ -1,10 +1,12 @@
 package com.example.demo.controller;
 
-import com.example.demo.bean.db1.LeUser;
+import com.example.demo.bean.dto.UserInfoDTO;
 import com.example.demo.service.UserService;
 import com.example.demo.utils.resultutil.ResultUtils;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,14 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Api(description = "用户信息" )
+@RequestMapping("/user")
 public class UserController extends ResultUtils {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/user/{id}" , method =  RequestMethod.GET)
-    public ResultUtils<LeUser> getUserById(String id ){
-        return createResult().setObjValue(userService.getUserYById(id));
+    @ApiOperation("用户注册")
+    @RequestMapping(value = "/register" , method =  RequestMethod.POST)
+    public ResultUtils<String> registerUser(@RequestBody UserInfoDTO user){
+        return createResult().setObjValue(userService.registerUser(user));
     }
 
 }
